@@ -12,6 +12,7 @@ object Printer {
             }
         }
         println("Time ${pizza.time}")
+        println(pizza.address)
         println(pizza.couponused)
         println("Discount : ${pizza.discount}")
         println("Tax 12% =${pizza.tax}")
