@@ -1,13 +1,14 @@
 package data
 import domain.PizzaOrder
-private val pizzas = mutableListOf<PizzaOrder>()
+object PizzaData {
+    private val pizzas = mutableListOf<PizzaOrder>()
+    fun addNewOrder(pizzatemp: PizzaOrder) {
+        pizzas.add(pizzatemp)
+    }
 
-fun addNewOrder(pizzatemp : PizzaOrder)
-{
-    pizzas.add(pizzatemp)
-}
-fun getAllOrders(): MutableList<PizzaOrder> {
-    return pizzas
+    fun getAllOrders(): List<PizzaOrder> {
+        return pizzas
+    }
 }
 
 
