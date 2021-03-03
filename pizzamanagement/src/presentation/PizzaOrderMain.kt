@@ -1,7 +1,6 @@
 package presentation
 
-import data.addNewOrder
-import data.getAllOrders
+import data.PizzaData
 import domain.Pizza
 import domain.PizzaOrder
 import domain.TaxAndCouponCalculator
@@ -71,10 +70,10 @@ fun main(args: Array<String>) {
             val (totalcost, couponused, tax, discount) = TaxAndCouponCalculator.calculateTaxandCoupon(pizzatemp)
             val order = PizzaOrder(currenttime, address, pizzatemp, totalcost, couponused,discount,tax)
             Printer.printOrderSummary(order)
-            addNewOrder(order)
+            PizzaData.addNewOrder(order)
         }
         if (input == 2) {
-            Printer.printpreviousorder(getAllOrders())
+            Printer.printpreviousorder(PizzaData.getAllOrders())
         }
         if (input == 3)
             break
